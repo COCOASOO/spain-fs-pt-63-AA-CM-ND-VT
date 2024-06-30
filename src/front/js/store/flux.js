@@ -40,8 +40,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 							icon: "warning",
 							iconColor: "#f5e556",
 							confirmButtonColor: "#f5e556"
-							
-						  });
+
+						});
 						return false;
 					}
 					const data = await resp.json();
@@ -65,7 +65,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						icon: "success",
 						iconColor: "#f5e556",
 						confirmButtonColor: "#f5e556"
-					  });
+					});
 					return true;
 				} catch (error) {
 					console.log(error);
@@ -100,7 +100,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 							iconColor: "#f5e556",
 							confirmButtonColor: "#f5e556"
 
-						  });
+						});
 						return false;
 					}
 					const data = await resp.json();
@@ -110,7 +110,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						icon: "success",
 						iconColor: "#f5e556",
 						confirmButtonColor: "#f5e556"
-					});					
+					});
 					return true;
 				} catch (error) {
 					return false;
@@ -167,7 +167,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return false;
 				}
 			},
-			
+
 
 			syncToken: () => {
 				const token = sessionStorage.getItem("token");
@@ -266,8 +266,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 							icon: "warning",
 							iconColor: "#f5e556",
 							confirmButtonColor: "#f5e556"
-							
-						  });
+
+						});
 						return [];
 					}
 					const data = await resp.json();
@@ -284,9 +284,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const opts = {
 					method: "GET",
 					headers: {
-						"Content-Type": "application/json",
-						"Authorization": `Bearer ${store.token}`
-					}
+						"Content-Type": "application/json"					}
 				};
 				try {
 					const resp = await fetch(`${process.env.BACKEND_URL}/api/all_services`, opts);
@@ -297,7 +295,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 							icon: "warning",
 							iconColor: "#f5e556",
 							confirmButtonColor: "#f5e556"
-						  });
+						});
 						return [];
 					}
 					const data = await resp.json();
@@ -330,7 +328,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 							icon: "warning",
 							iconColor: "#f5e556",
 							confirmButtonColor: "#f5e556"
-						  });
+						});
 						return false;
 					}
 					const data = await resp.json();
@@ -338,7 +336,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						title: "Confirmed",
 						text: "Service created successfully.",
 						icon: "success"
-					  });
+					});
 					return true;
 				} catch (error) {
 					console.log(error);
@@ -364,7 +362,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 							icon: "warning",
 							iconColor: "#f5e556",
 							confirmButtonColor: "#f5e556"
-						  });
+						});
 						return [];
 					}
 					const data = await resp.json();
@@ -395,7 +393,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 							icon: "warning",
 							iconColor: "#f5e556",
 							confirmButtonColor: "#f5e556"
-						  });
+						});
 						return false;
 					}
 					const data = await resp.json();
@@ -423,14 +421,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 								icon: "warning",
 								iconColor: "#f5e556",
 								confirmButtonColor: "#f5e556"
-							  });
+							});
 							return false;
 						}
 						Swal.fire({
 							title: "Service reserved successfully.",
 							text: "We hope you enjoy it!",
 							icon: "success"
-						  });
+						});
 					} catch (error) {
 						console.log(error);
 						return false;
@@ -521,7 +519,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 							icon: "warning",
 							iconColor: "#f5e556",
 							confirmButtonColor: "#f5e556"
-						  });
+						});
 						return false;
 					}
 
@@ -544,8 +542,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						icon: "warning",
 						iconColor: "#f5e556",
 						confirmButtonColor: "#f5e556"
-						
-					  });
+
+					});
 					return [];
 				}
 				const opts = {
@@ -557,7 +555,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				try {
 					const resp = await fetch(`${process.env.BACKEND_URL}/api/user_bookings?user_id=${userId}`, opts);
 					if (resp.status !== 200) {
-						
+
 						return [];
 					}
 					const data = await resp.json();
@@ -577,8 +575,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						icon: "warning",
 						iconColor: "#f5e556",
 						confirmButtonColor: "#f5e556"
-						
-					  });
+
+					});
 					return [];
 				}
 				const opts = {
@@ -596,7 +594,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 							icon: "warning",
 							iconColor: "#f5e556",
 							confirmButtonColor: "#f5e556"
-						  });
+						});
 						return [];
 					}
 					const data = await resp.json();
@@ -618,7 +616,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						icon: "warning",
 						iconColor: "#f5e556",
 						confirmButtonColor: "#f5e556"
-					  });
+					});
 					return [];
 				}
 				const opts = {
@@ -636,7 +634,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 							icon: "warning",
 							iconColor: "#f5e556",
 							confirmButtonColor: "#f5e556"
-						  });
+						});
 						return [];
 					}
 					const data = await resp.json();
@@ -656,7 +654,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						icon: "warning",
 						iconColor: "#f5e556",
 						confirmButtonColor: "#f5e556"
-					  });
+					});
 					return [];
 				}
 				const opts = {
@@ -674,7 +672,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 							icon: "warning",
 							iconColor: "#f5e556",
 							confirmButtonColor: "#f5e556"
-						  });
+						});
 						return [];
 					}
 					const data = await resp.json();
@@ -694,7 +692,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						icon: "warning",
 						iconColor: "#f5e556",
 						confirmButtonColor: "#f5e556"
-					  });
+					});
 					return null;
 				}
 				const opts = {
@@ -713,7 +711,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 							icon: "warning",
 							iconColor: "#f5e556",
 							confirmButtonColor: "#f5e556"
-						  });
+						});
 						return null;
 					}
 					const data = await resp.json();
@@ -740,7 +738,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return data;
 				} catch (error) {
 					console.error('Error fetching company:', error);
-					return null; 
+					return null;
 				}
 			},
 
@@ -769,17 +767,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 					throw error;
 				}
 			},
-			
+
 			deleteCompanyWithDependencies: async (company_id) => {
 				const store = getStore();
 				const token = store.token;
 				const backendUrl = process.env.BACKEND_URL;
-			
+
 				const headers = {
 					'Content-Type': 'application/json',
 					'Authorization': `Bearer ${token}`
 				};
-			
+
 				try {
 					// Step 1: Delete requests
 					let response = await fetch(`${backendUrl}/api/companies/${company_id}/requests`, {
@@ -787,28 +785,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 						headers
 					});
 					if (!response.ok) throw new Error('Failed to delete requests');
-			
+
 					// Step 2: Delete bookings
 					response = await fetch(`${backendUrl}/api/companies/${company_id}/bookings`, {
 						method: 'DELETE',
 						headers
 					});
 					if (!response.ok) throw new Error('Failed to delete bookings');
-			
+
 					// Step 3: Delete services
 					response = await fetch(`${backendUrl}/api/companies/${company_id}/services`, {
 						method: 'DELETE',
 						headers
 					});
 					if (!response.ok) throw new Error('Failed to delete services');
-			
+
 					// Step 4: Delete company
 					response = await fetch(`${backendUrl}/api/companies/${company_id}`, {
 						method: 'DELETE',
 						headers
 					});
 					if (!response.ok) throw new Error('Failed to delete company');
-			
+
 					// Step 5: Delete user
 					const user_id = sessionStorage.getItem('user_id');
 					response = await fetch(`${backendUrl}/api/users/${user_id}`, {
@@ -816,7 +814,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						headers
 					});
 					if (!response.ok) throw new Error('Failed to delete user');
-			
+
 					setStore({ user: null }); // Or any other appropriate action
 					return true;
 				} catch (error) {
@@ -824,8 +822,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return false;
 				}
 			},
-			
-			
+
+
 			getCompanyPublic: async (company_id) => {
 				const token = getStore().token;
 				try {
@@ -833,6 +831,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 						headers: {
 							"Content-Type": "application/json",
 							'Authorization': `Bearer ${token}`
+						}
+					});
+					if (!resp.ok) {
+						throw new Error('Failed to fetch company');
+					}
+					const data = await resp.json();
+					console.log(data)
+					return data;
+				} catch (error) {
+					console.error('Error fetching company:', error);
+					throw error;
+				}
+			},
+
+			getCompanyInfo: async (companyid) => {
+				try {
+					const resp = await fetch(`${process.env.BACKEND_URL}/api/company/${companyid}`, {
+						headers: {
+							"Content-Type": "application/json"
 						}
 					});
 					if (!resp.ok) {

@@ -12,6 +12,7 @@ const ServiceCard = ({ service, companyId, hideCompanyButton }) => {
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
     const [serviceTypeName, setServiceTypeName] = useState("");
+    const [companyInfo, setCompanyInfo] = useState({});
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -25,6 +26,21 @@ const ServiceCard = ({ service, companyId, hideCompanyButton }) => {
 
         fetchMasterServices();
     }, [service.type, actions]);
+
+    useEffect(() => {
+        const fetchCompanyInfo = async () => {
+            try {
+                const info = await actions.getCompanyInfo(companyId);
+                setCompanyInfo(info);
+                console.log(info.location);
+            } catch (error) {
+                console.error('Error fetching company info:', error);
+            }
+        };
+
+        fetchCompanyInfo();
+    }, [companyId, actions]);
+
 
     const cld = new Cloudinary({
         cloud: {
@@ -51,8 +67,8 @@ const ServiceCard = ({ service, companyId, hideCompanyButton }) => {
                 icon: "success",
                 iconColor: "#f5e556",
                 confirmButtonColor: "#f5e556"
-                
-              });
+
+            });
         }
     };
 
@@ -67,8 +83,8 @@ const ServiceCard = ({ service, companyId, hideCompanyButton }) => {
                 icon: "warning",
                 iconColor: "#f5e556",
                 confirmButtonColor: "#f5e556"
-              });
-            
+            });
+
         }
     };
 
@@ -87,7 +103,7 @@ const ServiceCard = ({ service, companyId, hideCompanyButton }) => {
                         <p className="card-text">Type: {serviceTypeName}</p>
                         <p className="card-text">Price: {service.price}€</p>
                         <p className="card-text">Duration: {service.duration} minutes</p>
-                        <p className="card-text">Location: {service.location}</p>
+                        <p className="card-text">Location: {companyInfo?.location}</p>
                     </div>
                 </div>
                 <div className="col-md-2 col-12">

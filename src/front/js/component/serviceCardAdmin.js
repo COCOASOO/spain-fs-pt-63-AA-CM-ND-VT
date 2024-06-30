@@ -26,6 +26,7 @@ const ServiceCardAdmin = ({ service, onEdit, onDelete }) => {
 
         fetchMasterServices();
     }, [service.type, actions]);
+    
 
     return (
         <div className="card mb-4">

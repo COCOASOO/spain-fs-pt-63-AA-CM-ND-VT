@@ -24,7 +24,7 @@ export const Home = () => {
                                 <h1 className="display-5 fw-bolder text-dark mb-2">Welcome to Our Hairdressing Platform</h1>
                                 <p className="lead fw-normal text-dark-50 mb-4">Register as a client or company to easily and quickly hire and offer hairdressing services.</p>
                                 <div className="d-grid gap-3 d-md-flex justify-content-md-center">
-                                    <Link to="/register" className="btn btn-yellow btnwidhome py-2">Register</Link>
+                                    <Link to="/signup" className="btn btn-yellow btnwidhome py-2">Register</Link>
                                     <Link to="/services" className="btn btn-outline-dark btnwidhome py-2">View Services</Link>
                                 </div>
                             </div>

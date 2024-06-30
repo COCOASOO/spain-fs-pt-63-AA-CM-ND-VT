@@ -75,12 +75,12 @@ const ServiceCard = ({ service, companyId, hideCompanyButton }) => {
     return (
         <div className="card mb-4">
             <div className="row no-gutters">
-                <div className="col-md-4 d-none d-md-block">
+                <div className="col-md-3 d-none d-md-block">
                     <div className="card-img-left">
                         {myImage ? <AdvancedImage cldImg={myImage} className="img-cover" /> : <p>No image available</p>}
                     </div>
                 </div>
-                <div className="col-md-6 col-12">
+                <div className="col-md-7 col-12">
                     <div className="card-body rounded m-2">
                         <h3 className="card-title text-center">{service.name}</h3>
                         <p className="card-text">Description: {service.description}</p>

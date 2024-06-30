@@ -19,7 +19,7 @@
 .card-img-left img,
 .card-img-left .cld-image {
   width: 100%;
-  height: 100%;
+  height: 300px;
 }
 
 .row.no-gutters {
